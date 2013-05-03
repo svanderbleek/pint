@@ -19,11 +19,26 @@
 
 .marketing-title {
   text-align: center;
-  h2 { color: #666; }
+  h2 {
+    color: #666;
+  }
 }
 
-.for-programmers {
+.marketing-enter {
+  text-align: center;
+  padding: 20px;
 }
 
-.for-employers {
+.marketing-pints {
+  @media (max-width: 600px) {
+    text-align: center;
+  }
+}
+
+.pint-list-item {
+  display: inline-block;
+  padding: 10px;
+  background-color: #CBCBCB;
+  border-radius: 18px;
+  margin-bottom: 10px;
 }
