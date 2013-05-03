@@ -1,0 +1,18 @@
+!!! 5
+%html
+  %head
+    %title Pint Programmer
+    = stylesheet_link_tag("application", media: "all")
+    = javascript_include_tag("application")
+    = csrf_meta_tags
+
+.navbar.navbar-fixed-top
+  .navbar-inner
+    .container-fixed
+      .brand
+        = image_tag('beer.png', class: 'brand-beer')
+        Pint Programmer
+
+.container
+  .row
+    = yield
