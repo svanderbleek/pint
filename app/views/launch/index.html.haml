@@ -5,7 +5,7 @@
   %h2.for-employers Employers get more done
 
 .marketing-enter
-  %a.btn
+  = link_to(new_github_auth_path, class: 'btn') do
     = image_tag('github-signup.png')
     Connect with Github
 

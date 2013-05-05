@@ -39,9 +39,13 @@ GEM
       execjs
     coffee-script-source (1.6.2)
     erubis (2.7.0)
+    ethon (0.5.12)
+      ffi (>= 1.3.0)
+      mime-types (~> 1.18)
     excon (0.20.1)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    ffi (1.8.1)
     fog (1.10.1)
       builder
       excon (~> 0.20)
@@ -126,6 +130,8 @@ GEM
       actionpack (>= 3.1)
       execjs
       railties (>= 3.1)
+    typhoeus (0.6.3)
+      ethon (~> 0.5.11)
     tzinfo (0.3.37)
     uglifier (2.0.1)
       execjs (>= 0.3.0)
@@ -143,4 +149,5 @@ DEPENDENCIES
   rails (= 4.0.0.beta1)
   sass-rails (~> 4.0.0.beta1)
   twitter-bootstrap-rails
+  typhoeus
   uglifier (>= 1.0.3)

@@ -3,6 +3,6 @@ Pint::Application.routes.draw do
   root to: 'launch#index'
 
   namespace :github do
-    post :auth
+    resource :auth
   end
 end

@@ -8,6 +8,7 @@ gem 'rails', '4.0.0.beta1'
 gem 'pg'
 
 gem 'twitter-bootstrap-rails'
+gem 'typhoeus'
 
 gem 'asset_sync'
 gem 'haml-rails'
