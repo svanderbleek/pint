@@ -5,7 +5,6 @@ class Github::AuthsController < ApplicationController
 
   def show
     session[:code] = params[:code]
-
   end
 
   private
