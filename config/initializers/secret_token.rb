@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Pint::Application.config.secret_key_base = '9745a0c23cce453d47cb4f99f8da447ebcc92ada136e0af8539775f68a3e2d80012836502973ee9441cbe413d8abb9fd2e7a287aaa811d0b5238a422901c6bf6'
+PintProgrammer::Application.config.secret_key_base = '9745a0c23cce453d47cb4f99f8da447ebcc92ada136e0af8539775f68a3e2d80012836502973ee9441cbe413d8abb9fd2e7a287aaa811d0b5238a422901c6bf6'

@@ -1,4 +1,4 @@
-Pint::Application.routes.draw do
+PintProgrammer::Application.routes.draw do
   get "launch/index"
   root to: 'launch#index'
 
