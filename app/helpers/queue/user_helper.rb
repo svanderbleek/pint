@@ -1,0 +1,2 @@
+module Queue::UserHelper
+end
