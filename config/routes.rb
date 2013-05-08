@@ -1,4 +1,4 @@
-PintProgrammer::Application.routes.draw do
+Tun::Application.routes.draw do
   get "user/update"
   get "launch/index"
   root to: 'launch#index'
