@@ -4,7 +4,12 @@ class Github::AuthsController < ApplicationController
   end
 
   def show
-    session[:code] = params[:code]
+    auth_job = Hopback::AuthTokenJob.new(
+      curren_user.id,
+      params[:code]
+    )
+
+    Hopback.enqueue(auth_job)
   end
 
   private

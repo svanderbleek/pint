@@ -5,8 +5,15 @@ class ApplicationController < ActionController::Base
 
   protected
 
+  def current_user=(user)
+    session[:id] = user.id
+    @current_user = user
+  end
+
   def current_user
-    session[:auth]
+    if id = session[:id]
+      @current_user ||= User.find(id)
+    end
   end
   helper_method :current_user
 end
