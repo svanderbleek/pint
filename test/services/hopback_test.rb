@@ -1,11 +1,20 @@
 require 'minitest/autorun'
 require 'ostruct'
 require 'redis'
-require '../../app/services/hopback'
+require 'uri'
+require 'active_support'
+require 'active_support/core_ext/object/to_json'
+require './app/services/hopback'
+
+Job = Struct.new(:queue, :data) do
+  def to_json
+    data.to_json
+  end
+end
 
 class HopbackTest < MiniTest::Unit::TestCase
   def setup
-    @job = OpenStruct.new(queue: 'test', to_json: { test: 'test' }.to_json)
+    @job = Job.new('test', { test: 'test' })
   end
 
   def test_connects_to_redis
@@ -15,6 +24,6 @@ class HopbackTest < MiniTest::Unit::TestCase
   def test_pushes_data_to_queue
     Hopback.enqueue(@job)
 
-    assert(JSON.parse(Hopback::QUEUE.lpop('test')).test == 'test')
+    assert_equal('test', JSON.parse(Hopback::QUEUE.lpop('test'))['test'])
   end
 end

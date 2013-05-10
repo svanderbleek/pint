@@ -1,6 +1,6 @@
 class Hopback
   def self.const_missing(name)
-    if name == 'QUEUE'
+    if name == :QUEUE
       @@queue ||= connect_queue
     else
       super
@@ -8,16 +8,17 @@ class Hopback
   end
 
   def self.connect_queue
-    redis_uri = URI.parse(ENV["REDISTOGO_URL"])
+    redis = URI.parse(ENV["REDISTOGO_URL"])
 
     Redis.new(
-      host: uri.host,
-      port: uri.port,
-      password: uri.password
+      host: redis.host,
+      port: redis.port,
+      password: redis.password
     )
   end
 
   def self.enqueue(job)
+    puts job.to_json
     QUEUE.lpush(job.queue, job.to_json)
   end
 end
