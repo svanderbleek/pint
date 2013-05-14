@@ -1,7 +1,7 @@
 class AuthTokenJob
-  def initialize(user, code)
+  def initialize(user_id, code)
     @job_data = {
-      id: user.id,
+      id: user_id,
       code: code
     }
   end
